@@ -56,6 +56,25 @@ def formatar_dados(str_data: str):
     
     return '\n'.join(log_lines)
 
+def pegar_menor_item(dicio: dict):
+    
+    if not isinstance(dicio, dict):
+
+        raise IsNotADictionary
+    
+    menor_item = None
+    
+    try:
+
+        menor_item = min(dicio, key=lambda key: dicio[key])
+
+    except Exception as e:
+
+        print(e)
+        raise MinItemValueNotFound
+
+    return menor_item
+
 # pegar dados das linhas ja formatados
 linhas_formatadas = ''
 
