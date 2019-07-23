@@ -1,7 +1,8 @@
 import os
 import csv
 import io
-from errors import DataNotProvided, IsNotADictionary, MinItemValueNotFound
+from errors import MinItemValueNotFound
+from func import formatar_dados, pegar_menor_item
 
 """
     - informar qual categoria cliente gastou mais
@@ -22,64 +23,6 @@ if not os.path.exists(filepath_log):
 
     print('Arquivo nao encontrado.')
     exit(0)
-
-def formatar_dados(str_data: str):
-
-    # se nao tem dados lanca erro
-    if not str_data:
-
-        raise DataNotProvided
-
-    # lista com cada linha do arquivo
-    log_lines = list()
-
-    # logica simples pra validar primeira linha
-    first_line = True
-
-    # interar as linhas do arquivo e formatar/padronizar dados 
-    for line_unclear in str_data:
-
-        # remove a quebra de linha
-        line = line_unclear.rstrip('\n')
-        
-        # TODO: melhorar essa padronizacao, talvez usar um REGEX
-        # padronizar dados
-        line = line.replace('\t', '|')
-        line = line.replace('    ', '|')
-        line = line.replace('||', '|')
-        line = line.replace('||', '|')
-        line = line.replace('||', '|')
-
-        # limpar titulos
-        if first_line:
-        
-            first_line = False
-
-            line = line.replace(' ', '')
-
-        # adiciona a linha na lista de linhas ja limpas
-        log_lines.append(line)
-    
-    return '\n'.join(log_lines)
-
-def pegar_menor_item(dicio: dict):
-    
-    if not isinstance(dicio, dict):
-
-        raise IsNotADictionary
-    
-    menor_item = None
-    
-    try:
-
-        menor_item = min(dicio, key=lambda key: dicio[key])
-
-    except Exception as e:
-
-        print(e)
-        raise MinItemValueNotFound
-
-    return menor_item
 
 # pegar dados das linhas ja formatados
 linhas_formatadas = ''
