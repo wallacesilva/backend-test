@@ -25,6 +25,11 @@ if not os.path.exists(filepath_log):
 
 def formatar_dados(str_data: str):
 
+    # se nao tem dados lanca erro
+    if not str_data:
+
+        raise DataNotProvided
+
     # lista com cada linha do arquivo
     log_lines = list()
 
