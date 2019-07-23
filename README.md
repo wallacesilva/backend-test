@@ -1,5 +1,7 @@
 # backend-test
 
+Fiz um fork de https://github.com/cairano/backend-test para praticar programar em outras linguagens, gostei do teste. Se você quer mandar curriculo não use esse repositorio, use o original.
+
 ## será avaliado
 
 1. legibilidade
