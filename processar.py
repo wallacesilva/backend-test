@@ -3,11 +3,11 @@ import csv
 import io
 
 """
-    * informar qual categoria cliente gastou mais;
-    * informar qual foi o mês que cliente mais gastou;
-    * quanto de dinheiro o cliente gastou;
-    * quanto de dinheiro o cliente recebeu;
-    * saldo total de movimentações do cliente.
+    - informar qual categoria cliente gastou mais
+    - informar qual foi o mes que cliente mais gastou
+    - quanto de dinheiro o cliente gastou
+    - quanto de dinheiro o cliente recebeu
+    - saldo total de movimentacoes do cliente
 """
 
 # nome do arquivo de log
