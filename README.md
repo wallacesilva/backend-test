@@ -2,6 +2,20 @@
 
 Fiz um fork de https://github.com/cairano/backend-test para praticar programar em outras linguagens, gostei do teste. Se você quer mandar curriculo não use esse repositorio, use o original.
 
+## Executar
+
+Para processar os arquivos de log.
+
+```
+python3 processar.py
+```
+
+Para executar os testes basicos/unitários.
+
+```
+python3 -m unittest test.py
+```
+
 ## será avaliado
 
 1. legibilidade
