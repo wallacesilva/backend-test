@@ -131,13 +131,25 @@ for row in dict_reader:
     if valor >= 0:
         recebimentos = recebimentos + valor
 
-# pega categoria que gastou mais
-# categoria_gastou_mais = max(gastos_por_categoria, gastos_por_categoria.get)
-categoria_gastou_mais = min(gastos_por_categoria, key=lambda key: gastos_por_categoria[key])
+try:
+    
+    # pega categoria que gastou mais
+    categoria_gastou_mais = pegar_menor_item(gastos_por_categoria)
 
-# pega mes que gastou mais
-# mes_gastou_mais = max(gastos_por_mes, gastos_por_mes.get)
-mes_gastou_mais = min(gastos_por_mes, key=lambda key: gastos_por_mes[key])
+except MinItemValueNotFound as e:
+    
+    print('Erro ao pegar menor valor gasto em categorias.')
+    print(e)
+
+try:
+
+    # pega mes que gastou mais
+    mes_gastou_mais = pegar_menor_item(gastos_por_mes)
+
+except MinItemValueNotFound as e:
+    
+    print('Erro ao pegar menor valor gasto no mes.')
+    print(e)
 
 # saldo total
 saldo_total = recebimentos + gastos
