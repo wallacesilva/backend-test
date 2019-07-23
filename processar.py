@@ -1,6 +1,7 @@
 import os
 import csv
 import io
+from errors import DataNotProvided, IsNotADictionary, MinItemValueNotFound
 
 """
     - informar qual categoria cliente gastou mais
